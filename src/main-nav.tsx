@@ -80,13 +80,17 @@ export default function ResponsiveDrawer(props: Props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const closeMobileDrawer = () => {
+    setMobileOpen(false);
+  };
+
   const drawer = (
     <div>
       <div className={classes.toolbar} />
       <Divider />
       <List>
         <Link to="/">
-          <ListItem onClick={handleDrawerToggle} button key="home">
+          <ListItem onClick={closeMobileDrawer} button key="home">
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
@@ -94,7 +98,7 @@ export default function ResponsiveDrawer(props: Props) {
           </ListItem>
         </Link>
         <Link to="/about">
-          <ListItem onClick={handleDrawerToggle} button key="about">
+          <ListItem onClick={closeMobileDrawer} button key="about">
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
